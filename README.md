@@ -1,4 +1,6 @@
-# cat-filter
+# cat-filter 
+
+[![Build Status](https://travis-ci.org/aries-zhang/cat-filter.svg?branch=master)](https://travis-ci.org/aries-zhang/cat-filter)
 
 To test: ```python -m test.TransformerTest```
 
