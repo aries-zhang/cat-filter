@@ -1,13 +1,18 @@
-import requests
-import json
+import os
+from src.Transformer import Transformer
+from src.Client import Client
+
 
 def main():
-    url = 'http://agl-developer-test.azurewebsites.net/people.json'
-    response = requests.get(url)
-    if response.status_code == 200:
-        print json.dumps(response.json(), sort_keys=True, indent=2)
-    else:
-        print 'ERROR: ' + response.status_code
+    host = os.environ['API_HOST']
+    original_data = Client(host).get_people()
+
+    if original_data != None:
+        transformed_data = Transformer().transform(original_data)
+        for gender, cats in transformed_data.iteritems():
+            print gender
+            for cat in cats:
+                print '\t' + cat
 
 if __name__ == '__main__':
     main()

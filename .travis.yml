@@ -7,8 +7,8 @@ env:
   - TAG="arieszhang/cat-filter:${PACKAGE_VERSION}"
 
 script:
-  - docker build -t ${TAG}
-  - python -m tests
+  - docker build -t ${TAG} .
+  - python -m test.TransformerTest
 
 deploy:
   - provider: script
