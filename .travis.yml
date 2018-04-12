@@ -9,6 +9,7 @@ env:
 script:
   - docker build -t ${TAG} .
   - python -m test.TransformerTest
+  - docker image ls
 
 deploy:
   - provider: script
