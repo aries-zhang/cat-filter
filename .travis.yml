@@ -10,6 +10,9 @@ script:
   - python -m test.TransformerTest
   - docker image ls
 
+before_deploy:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+
 deploy:
   - provider: script
     skip_cleanup: true
