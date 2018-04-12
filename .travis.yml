@@ -4,10 +4,9 @@ python: "2.7"
 env:
   global:
   - PACKAGE_VERSION="v1.0.${TRAVIS_BUILD_NUMBER}"
-  - TAG="arieszhang/cat-filter:${PACKAGE_VERSION}"
 
 script:
-  - docker build -t ${TAG} .
+  - docker build -t arieszhang/cat-filter:latest .
   - python -m test.TransformerTest
   - docker image ls
 
@@ -17,4 +16,4 @@ deploy:
     on:
       all_branches: true
     script:
-      - docker push ${TAG}
+      - docker push arieszhang/cat-filter:latest
