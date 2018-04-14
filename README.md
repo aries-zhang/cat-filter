@@ -15,6 +15,10 @@ To run:
 - as local python project: (this is not recommented since environment variable ```API_HOST``` is needed to be set before you run it)
 
     ```bash
+    export API_HOST=http://agl-developer-test.azurewebsites.net
+    ```
+
+    ```bash
     pip install -r requirements.txt
     python main.py
     ```

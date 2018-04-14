@@ -4,8 +4,12 @@ from src.Transformer import Transformer
 
 class TransformerTest(unittest.TestCase):
     def test_key_selector_should_work(self):
-        person = {'gender':'Male', 'name':'Aries'}
-        self.assertEqual(Transformer().key_selector(person), 'Male')
+        person = '''{
+                        "name": "Bob",
+                        "gender": "Male",
+                        "age": 23
+                    }'''
+        self.assertEqual(Transformer().key_selector(json.loads(person)), 'Male')
 
     def test_resolve_pets_should_work(self):
         person = '''[{

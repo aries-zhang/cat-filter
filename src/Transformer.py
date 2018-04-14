@@ -12,5 +12,3 @@ class Transformer:
         return {gender: sorted(self.resolve_cat_name(self.resolve_pets(owners))) \
                     for gender, owners \
                     in groupby(sorted_data, self.key_selector)}
-
-        
