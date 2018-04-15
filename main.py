@@ -9,7 +9,7 @@ def main():
     '''Calls the API, calls the transform method, and print the 
     transformed data
     '''
-    host = os.environ['API_HOST']
+    host = os.environ['PEOPLE_SERVICE_HOST']
     original_data = PeopleServiceClient(host).get_people()
 
     if original_data != None:

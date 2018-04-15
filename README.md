@@ -9,13 +9,13 @@ To run:
 - as docker container:
 
     ```bash
-    sudo docker run -e API_HOST=http://agl-developer-test.azurewebsites.net arieszhang/cat-filter:latest
+    sudo docker run -e PEOPLE_SERVICE_HOST=http://agl-developer-test.azurewebsites.net arieszhang/cat-filter:latest
     ```
 
-- as local python project: (this is not recommented since environment variable ```API_HOST``` is needed to be set before you run it)
+- as local python project: (this is not recommented since environment variable ```PEOPLE_SERVICE_HOST``` is needed to be set before you run it)
 
     ```bash
-    export API_HOST=http://agl-developer-test.azurewebsites.net
+    export PEOPLE_SERVICE_HOST=http://agl-developer-test.azurewebsites.net
     ```
 
     ```bash
