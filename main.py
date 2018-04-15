@@ -1,11 +1,16 @@
+# -*- coding: utf-8 -*-
+'''The main entrance'''
 import os
 from src.Transformer import Transformer
-from src.Client import Client
+from src.PeopleServiceClient import PeopleServiceClient
 
 
 def main():
+    '''Calls the API, calls the transform method, and print the 
+    transformed data
+    '''
     host = os.environ['API_HOST']
-    original_data = Client(host).get_people()
+    original_data = PeopleServiceClient(host).get_people()
 
     if original_data != None:
         transformed_data = Transformer().transform(original_data)
